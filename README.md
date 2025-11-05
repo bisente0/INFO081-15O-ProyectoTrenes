@@ -37,14 +37,14 @@
 
 ```json
 {
-    'NOMBRE_TREN' : 'R01',
-    'VELOCIDAD' : 120,
-    'RUTA' : 'R01',
-    'VAGONES' : [5, 25]
-    'FLUJO_ACUM' : 75,
-    'ACTIVO' : True,
+    "NOMBRE_TREN" : "R01",
+    "VELOCIDAD" : 120,
+    "RUTA" : "R01",
+    "VAGONES" : [5, 25],
+    "FLUJO_ACUM" : 75,
+    "ACTIVO" : True,
     // Se define las características del objeto para mejor comprensión, en uso real, sería el nombre del objeto.
-    'PASAJEROS' : [
+    "PASAJEROS" : [
         {
             "ID" : "A001",
             "ORIGEN" : "E0",
