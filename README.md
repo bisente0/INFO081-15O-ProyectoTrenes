@@ -43,9 +43,9 @@
     "VAGONES" : [5, 25],
     "FLUJO_ACUM" : 75,
     "ACTIVO" : true,
-    // Se define las características del objeto para mejor comprensión, en uso real, sería el nombre del objeto.
     "PASAJEROS" : [
         {
+            "_comment": "Se establecen los atributos del objeto específicamente con el propósito de su comprensión, en real uso, sería el nombre del objeto/persona.",
             "ID" : "A001",
             "ORIGEN" : "E0",
             "CREACION" : "22:14",
