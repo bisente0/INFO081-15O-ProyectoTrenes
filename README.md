@@ -42,7 +42,7 @@
     "RUTA" : "R01",
     "VAGONES" : [5, 25],
     "FLUJO_ACUM" : 75,
-    "ACTIVO" : True,
+    "ACTIVO" : true,
     // Se define las características del objeto para mejor comprensión, en uso real, sería el nombre del objeto.
     "PASAJEROS" : [
         {
