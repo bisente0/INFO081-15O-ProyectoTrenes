@@ -56,7 +56,31 @@
 }
 ```
 
-&ensp; Teniendo esto claro, lo mismo aplica para los archivos de carácter similar, cómo sería 'E01.json' o 'R01.json'.
+&ensp; Teniendo esto claro, lo mismo aplica para los archivos de carácter similar, cómo sería 'E01.json' o 'R01.json'. Y para archivos como 'config.json':
+
+```json
+{
+    "simulacion_default" : {
+        "MAX_TRENES" : 18,
+        "INTERVALO_AUTOSAVE" : 60,
+        "VELOCIDAD_TIEMPO" : 1,
+        "VELOCIDAD_DEFAULT" : true
+    },
+    "ARCHIVOS" : {
+        "RUTAS" : ".../DATA/RUTAS",
+        "ESTACIONES" : ".../DATA/ESTACIONES",
+        "ESTADO" : ".../DATA/STATE",
+        "TRENES" : ".../DATA/TRENES"
+    },
+    "DISPLAY" : {
+        "TAMAÑO_VENTANA" : [1280, 720],
+        "USAR_GUI" : true,
+        "INFO_DEBUG" : false
+    }
+}
+```
+
+&ensp; Cabe destacar que, a medida que el programa es desarrollado, serán observados los aspectos considerados en el archivo.
 
 ## REQUISITOS
 
