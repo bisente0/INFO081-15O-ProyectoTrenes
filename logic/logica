@@ -1,0 +1,8 @@
+lógica para el estado de simulación y sistema de guardado
+
+-Estado de Simulación: Debe existir al menos esta clase, al menos con el
+atributo “hora_actual”.
+
+-Sistema de Guardado: Debe existir al menos esta clase, al menos con dos
+funciones (que pueden estar parcialmente implementadas):
+“guardar_simulacion” y “cargar_simulacion”.
