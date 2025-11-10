@@ -1,5 +1,11 @@
 import json, datetime
 from ..state.sim_state import estado
+from ....data.estaciones.ent_estacion import *
+from ....data.trenes.ent_trenes import *
+from ....data.rutas.ent_rutas import *
+from ....data.personas.personas import *
+
+
 
 class JSON_Encoder(json.JSONEncoder):
     # Encoder que será llamado al momento de interactuar con clases en nuestros archivos JSON
@@ -7,7 +13,7 @@ class JSON_Encoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime):
             return obj.isoformat()
-        elif isinstance(obj, tren):
+        elif isinstance(obj, Tren):
             return {
                     "__type__" : "tren", 
                     "ID" : obj.id,
@@ -17,7 +23,7 @@ class JSON_Encoder(json.JSONEncoder):
                     "ACTIVO" : obj.activo,
                     "PASAJEROS" : obj.pasajeros
                     }
-        elif isinstance(obj, estacion):
+        elif isinstance(obj, Estacion):
             return {
                     "__type__" : "estacion",
                     "NOMBRE" : obj.nombre,
@@ -26,7 +32,7 @@ class JSON_Encoder(json.JSONEncoder):
                     "VIAS" : obj.vias,
                     "FLUJO_ACUM" : obj.flujo_acum
                     }
-        elif isinstance(obj, ruta):
+        elif isinstance(obj, Ruta):
             return {
                     "__type__" : "ruta",
                     "NOMBRE" : obj.nombre,
@@ -46,7 +52,7 @@ class JSON_Encoder(json.JSONEncoder):
                     "EVENTOS_EN_COLA" : obj.eventos_en_cola,
                     "PAUSA" : obj.pause
                     }
-        elif isinstance(obj, persona):
+        elif isinstance(obj, Persona):
             return {
                     "__type__" : "persona",
                     "ID" : obj.id,
