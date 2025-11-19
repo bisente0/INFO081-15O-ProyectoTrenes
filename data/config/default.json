@@ -1,0 +1,89 @@
+{
+    "estaciones" : {
+        "estacion_central" : {
+            "NOMBRE" : "estacion_central",
+            "DESCRIPCION" : "Principal nodo ferroviario del país",
+            "ID" : "E1",
+            "POBLACION_TOTAL" : 8242459,
+            "VIAS" : ["rancagua", "chillan"],
+            "FLUJO_ACUM" : 0
+        },
+        "rancagua" : {
+            "NOMBRE" : "rancagua",
+            "ID" : "E2",
+            "POBLACION_TOTAL" : 274407,
+            "VIAS" : ["talca", "estacion_central"],
+            "FLUJO_ACUM" : 0
+        },
+        "talca" : {
+            "NOMBRE" : "talca",
+            "ID" : "E3",
+            "POBLACION_TOTAL" : 242344,
+            "VIAS" : ["chillan", "rancagua"],
+            "FLUJO_ACUM" : 0
+        },
+        "chillan" : {
+            "NOMBRE" : "chillan",
+            "ID" : "E4",
+            "POBLACION_TOTAL" : 204091,
+            "VIAS" : ["talca", "estacion_central"],
+            "FLUJO_ACUM" : 0
+        }
+    },
+
+    "trenes" : {
+        "__commment" : "CAPACIDAD 0 significa a discreción del usuario",
+        "BMU" : {
+            "ENERGIA" : ["electrico", "diesel"],
+            "VELOCIDAD_MAX" : 160,
+            "CAPACIDAD" : 236
+        },
+        "EMU" : {
+            "ENERGIA" : "electrico",
+            "VELOCIDAD_MAX" : 120,
+            "CAPACIDAD" : 0 
+        }
+    },
+
+    "rutas" : {
+        "estacion_rancagua" : {
+            "NOMBRE" : "estacion_rancagua",
+            "ID" : "R1",
+            "ORIGEN" : "estacion_central",
+            "DESTINO" : "rancagua",
+            "LONGITUD" : 87
+        },
+        "estacion_chillan" : {
+            "NOMBRE" : "estacion_chillan",
+            "ID" : "R2",
+            "ORIGEN" : "estacion_central",
+            "DESTINO" : "chillan",
+            "LONGITUD" : 404
+        },
+        "rancagua_talca" : {
+            "NOMBRE" : "rancagua_talca",
+            "ID" : "R3",
+            "ORIGEN" : "rancagua",
+            "DESTINO" : "talca",
+            "LONGITUD" : 200
+        },
+        "talca_chillan" : {
+            "NOMBRE" : "talca_chillan",
+            "ID" : "R4",
+            "ORIGEN" : "talca",
+            "DESTINO" : "chillan",
+            "LONGITUD" : 180
+        }
+    },
+
+    "estado" : {
+        "HORA_ACTUAL" : "07:00",
+        "__commment" : "Manipular 'trenes' y demás diccionarios en el main()",
+        "FECHA" : "01-03-2015",
+        "TRENES_DISP" : "trenes",
+        "ESTACIONES_DISP" : "estaciones",
+        "RUTAS_DISP" : "rutas",
+        "EVENTOS_EN_COLA" : false,
+        "PAUSA" : true
+    }
+}

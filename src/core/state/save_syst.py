@@ -1,5 +1,5 @@
 from sim_state import state
-from ..utils.funciones_relacionadas import JSON_Encoder, datos_corruptos
+from ..utils.funciones_relacionadas import *
 import json
 
 class file_syst:
@@ -13,18 +13,31 @@ class file_syst:
     
     @estado.setter
     def estado(self, state: estado):
-        # Verificar si es estado DEFAULT antes de settear
-        # Implica comparar con config_default y decidir dependiendo de los cambios realizados
-        pass
+        '''''
+        Verificar si es estado DEFAULT antes de settear
+        Implica comparar con config_default y decidir dependiendo de los cambios realizados
+
+        '''
+        with open("..../data/config/default.json", mode="r", encoding="utf-8") as r_file:
+            for key in r_file:
+                if key=="estado":
+                    if diff_jsonfiles(state, estado(**{k: atributo for k, atributo in key.items()})):
+                        self.estado = r_file
+                    else:
+                        self.estado = state
 
     def guardar_sim(self, state: estado ,path="..../data/estado") -> None:
-        #Función que usando el ENCODER en utils, escribe/reescribe el estado en data.
+        # Función que usando el ENCODER en utils, escribe/reescribe el estado en data.
+
         with open(f"..../data/estado/{state.fecha}.json", mode="w", encoding="utf-8") as w_file:
             json.dump(JSON_Encoder.default(state), w_file)
 
     def cargar_sim(self, state: estado, path=".../data/estado") -> None:
-        # Función que verifica integridad, en caso de que el archivo no esté corrupto,
-        # recorre los atributos del estado y escribe/reescribe usando el ENCODER.
+        ''''
+        Función que verifica integridad, en caso de que el archivo no esté corrupto,
+        recorre los atributos del estado y escribe/reescribe usando el ENCODER.
+
+        '''
         if self.estado.verificar_integridad():
             with open("..../data/estaciones/estaciones.json", mode="a", encoding="utf-8") as w_file:
                 for estacion in state.estaciones_disp:
@@ -34,6 +47,7 @@ class file_syst:
                     json.dump(JSON_Encoder.default(ruta), w_file)
             with open("..../data/personas/personas.json", mode="a", encoding="utf-8") as w_file:
                 # Las personas están en un tren, o en una estación.
+
                 for estacion in state.estaciones_disp:
                     json.dump(JSON_Encoder.default(estacion.personas), w_file)
                 for tren in state.trenes_disp:

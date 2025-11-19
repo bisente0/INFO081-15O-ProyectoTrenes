@@ -1,5 +1,6 @@
 from datetime import time, datetime
-import queue
+import queue, json
+
 
 class estado:
     # Las personas serán accedidas a través de los trenes y estaciones.
@@ -33,7 +34,19 @@ class estado:
 
     # Revisar la sintáxis del archivo, la coherencia en los datos, existencia...
     def verificar_integridad(self, path=".../data") -> bool:
-        pass
+        try:
+            if (not self.estaciones_disp and self.trenes_disp) or (not self.rutas_disp and self.trenes_disp):
+                print("Error en coherencia de datos")
+                return False
+            with open(path, mode="r", encoding="utf-8") as file:
+                json.load(file)
+            return True
+        except FileNotFoundError as f:
+            print(f"El archivo no se encontró en: {path}")
+            return False
+        except json.JSONDecodeError as j:
+            print(f"Sintáxis JSON inválida en: {path} : {j}")
+            return False
 
     def reset(self, path=".../data") -> None:
         pass
