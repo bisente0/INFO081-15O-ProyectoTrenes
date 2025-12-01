@@ -1,0 +1,81 @@
+{
+    "hora_actual": "2025-12-03 07:00",
+    "estaciones": [
+        {
+            "nombre": "Santiago Central",
+            "poblacion": 8300000,
+            "vias": [
+                {
+                    "direccion": "N",
+                    "ocupada": false
+                },
+                {
+                    "direccion": "S",
+                    "ocupada": false
+                }
+            ],
+            "conexiones": [
+                "Rancagua",
+                "Chillán"
+            ],
+            "flujo_personas": 0
+        },
+        {
+            "nombre": "Santiago Central",
+            "poblacion": 230000,
+            "vias": [
+                {
+                    "direccion": "N",
+                    "ocupada": false
+                },
+                {
+                    "direccion": "S",
+                    "ocupada": false
+                }
+            ],
+            "conexiones": [
+                "Rancagua",
+                "Chillán"
+            ],
+            "flujo_personas": 0
+        },
+        {
+            "nombre": "Rancagua",
+            "poblacion": 270000,
+            "vias": [
+                {
+                    "direccion": "N",
+                    "ocupada": false
+                },
+                {
+                    "direccion": "S",
+                    "ocupada": false
+                }
+            ],
+            "conexiones": [
+                "Estacion central",
+                "San Fernando"
+            ],
+            "flujo_personas": 0
+        }
+    ],
+    "rutas": [
+        {
+            "origen": "Santiago Central",
+            "destino": "Rancagua",
+            "longitud": 66
+        }
+    ],
+    "trenes": [
+        {
+            "nombre": "BMU-2",
+            "velocidad": 120,
+            "vagones": [
+                236
+            ],
+            "flujo_personas": 0,
+            "accion": "esperando"
+        }
+    ],
+    "eventos": []
+}
