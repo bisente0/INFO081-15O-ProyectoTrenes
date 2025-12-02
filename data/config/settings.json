@@ -1,6 +1,5 @@
 {
-    "ancho": 800,
-    "alto": 600,
-    "titulo": "Simulación de Trenes - EFE",
-    "version": "0.1.0"
+  "ancho": 900,
+  "alto": 9000
 }
+

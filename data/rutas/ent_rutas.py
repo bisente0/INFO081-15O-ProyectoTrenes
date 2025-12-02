@@ -1,9 +1,5 @@
-class Ruta:
-    def _init_(self,Origen,Destino,Distancia):
-
-        self.Origen = Origen
-        self.Destino = Destino
-        self.Distancia = Distancia
-
-    def CambioRuta():
-        pass
+class EntRuta:
+    def __init__(self, origen, destino, longitud):
+        self.origen = origen
+        self.destino = destino
+        self.longitud = longitud  # en km

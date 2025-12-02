@@ -1,8 +1,6 @@
 {
-    "principal": "#2E5090",
-    "secundario": "#5A7DB0",
-    "fondo": "#F5F5F5",
-    "texto": "#333333",
-    "alerta": "#D32F2F",
-    "exito": "#388E3C"
+  "fondo": "#F5F5F5",
+  "principal": "#2A4373",
+  "secundario": "#5E8DDE",
+  "texto": "#333333"
 }

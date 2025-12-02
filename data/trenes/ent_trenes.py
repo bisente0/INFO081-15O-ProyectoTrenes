@@ -1,19 +1,7 @@
-class Tren:
-    def _init_(self, Nombre: str, Velocidad: int, Flujo: int):
-        self.Nombre = Nombre
-        self.Velocidad = Velocidad
-        self.Flujo = Flujo
-        self.Activo = False
-        self.Vagones = dict()
-
-    def AnadirVagon():
-        pass
-    
-    def QuitarVagon():
-        pass
-    
-    def CambiarEstado():
-        pass
-    
-    def CambioFlujo():
-        pass
+class EntTren:
+    def __init__(self, nombre, velocidad, vagones):
+        self.nombre = nombre
+        self.velocidad = velocidad  # en km/h
+        self.vagones = vagones  # lista de capacidades
+        self.flujo_personas = 0
+        self.accion = "esperando"
