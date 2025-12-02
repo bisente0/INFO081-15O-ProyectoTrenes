@@ -67,15 +67,15 @@ class JSON_Encoder(json.JSONEncoder):
         # En caso de no saber cómo serializar la información levanta un TypeError (built-in)
         return super().default(obj)
     
-def json_decoder(obj: object) -> object:
+def json_decoder(d: dict) -> object:
     '''
     Decodificador para pasar de JSON a PYTHON
     '''
 
-    if "__type__" not in obj:
-        return obj
+    if "__type__" not in d:
+        return d
 
-    t = obj["__type__"]
+    t = d["__type__"]
 
     if t == "tren":
         return Tren(**{k: atributo for k, atributo in Tren.items() if k != "__type__"})
@@ -103,7 +103,6 @@ def diff_jsonfiles(f1: object, f2: object) -> bool:
     if diff:
         return True
     return False
-
 
 
 
