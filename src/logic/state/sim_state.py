@@ -1,4 +1,5 @@
 from datetime import time, datetime
+from ...utils.funciones_relacionadas import JSON_Encoder
 import queue, json
 
 
@@ -59,8 +60,20 @@ class estado:
         # Generar clientes
 
     # En caso de corrupción, guardado, etcétera...
-    def reporte_estado(self, path=".../config/logs"):
-        pass
+    def reporte_estado(self, error, path=".../config/logs"):
+        with open(path+f"/report_{self.fecha}.json", mode="w", encoding="utf-8" ) as report:
+            json.load({
+                "ERRROR" : f"{error}",
+                "FECHA" : self.fecha,
+                "HORA_ACTUAL" : self.hora_actual,
+                "TRENES" : self.trenes_disp,
+                "ESTACIONES" : self.estaciones_disp,
+                "RUTAS" : self.rutas_disp,
+                "EVENTOS_COLA" : self.eventos_en_cola,
+                "HISTORIAL" : self.historial_eventos
+                
+            })
+
 
     # Para interacción con UI
     def pausar(self):

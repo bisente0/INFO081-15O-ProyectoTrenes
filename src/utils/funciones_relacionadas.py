@@ -1,9 +1,9 @@
 import json, datetime
-from ..state.sim_state import estado
-from ....data.estaciones.ent_estacion import *
-from ....data.trenes.ent_trenes import *
-from ....data.rutas.ent_rutas import *
-from ....data.personas.personas import *
+from ..logic.state.sim_state import estado
+from ...data.estaciones.ent_estacion import *
+from ...data.trenes.ent_trenes import *
+from ...data.rutas.ent_rutas import *
+from ...data.personas.personas import *
 
 
 
